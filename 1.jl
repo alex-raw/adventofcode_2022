@@ -1,3 +1,3 @@
-per_elf = [parse.(Int, split(x, '\n')) for x in split(readchomp("data/1.txt"), "\n\n")]
-maximum(sum, per_elf) |> println
-partialsort!(sum.(per_elf), 1:3, rev=true) |> sum |> println
+per_elf(file) = map(x -> sum(parse.(Int, split(x))), split(readchomp(file), "\n\n"))
+sum_max_n(file, k) = sum(partialsort!(per_elf(file), k, rev=true))
+println(sum_max_n("data/1.txt", 1), '\n', sum_max_n("data/1.txt", 1:3))
