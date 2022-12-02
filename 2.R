@@ -27,12 +27,13 @@ solve <- function(.file) {
 solve("data/2.txt")
 
 
-# fun alternative
+# alternative
 solve <- function(.file) {
-  input <- sapply(read.table("data/2.txt", stringsAsFactors = TRUE), as.integer)
-  multiplier <- matrix(c(1, 0, 2, 2, 1, 0, 0, 2, 1), 3) # 0 loss, 1 draw, 2 win
-  input2 <- input
-  input2[, 2] <- apply(multiplier[input2[, 1], ] == input2[, 2] - 1, 1, which)
-  c(part1 = sum((multiplier * 3)[input] + input[, 2]),
-    part2 = sum((multiplier * 3)[input2] + input2[, 2]))
+  input <- sapply(read.table(.file, stringsAsFactors = TRUE), as.integer)
+  multiplier <- matrix(c(1, 0, 2, 2, 1, 0, 0, 2, 1), 3)
+  score <- \(inds) sum((multiplier * 3)[inds] + inds[, 2])
+  me <- apply(multiplier[input[, 1], ] + 1 == input[, 2], 1, which)
+  c(part1 = score(input), part2 = score(cbind(input[, 1], me)))
 }
+
+solve("data/2.txt")
