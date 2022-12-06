@@ -27,8 +27,9 @@ solve <- function(.file) {
 solve("data/2.txt")
 
 
+
 # alternative
-solve <- function(.file) {
+solve2 <- function(.file) {
   input <- sapply(read.table(.file, stringsAsFactors = TRUE), as.integer)
   multiplier <- matrix(c(1, 0, 2, 2, 1, 0, 0, 2, 1), 3)
   score <- \(inds) sum((multiplier * 3)[inds] + inds[, 2])
@@ -36,4 +37,15 @@ solve <- function(.file) {
   c(part1 = score(input), part2 = score(cbind(input[, 1], me)))
 }
 
-solve("data/2.txt")
+solve2("data/2.txt")
+
+
+
+# minimal
+solve3 <- function(.file) {
+  with(lapply(read.table(.file, stringsAsFactors = TRUE), as.integer),
+    c(part1 = sum(V2 + (1 + V2 - V1) %% 3 * 3),
+      part2 = sum((V1 + V2) %% 3 + 1 + 3 * (V2 - 1))))
+}
+
+solve3("data/2.txt")
