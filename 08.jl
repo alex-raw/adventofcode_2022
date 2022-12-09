@@ -15,4 +15,4 @@ replace_none(x, val) = isnothing(x) ? val : x
     return score
 end
 
-@show getgrid("data/08.txt") |> solve2
+getgrid("data/08.txt") |> solve2
