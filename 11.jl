@@ -39,9 +39,3 @@ end
 
 @show monkeybusiness("data/11.txt")
 @show monkeybusiness("data/11.txt", k = 10_000, relief = 1)
-@time monkeybusiness("data/11.txt", k = 10_000, relief = 1)
-@time monkeybusiness("data/11.txt", k = 10_000, relief = 1)
-@time monkeybusiness("data/11.txt", k = 10_000, relief = 1)
-@time monkeybusiness("data/11.txt", k = 10_000, relief = 1)
-@time monkeybusiness("data/11.txt", k = 10_000, relief = 1)
-@time monkeybusiness("data/11.txt", k = 10_000, relief = 1)
