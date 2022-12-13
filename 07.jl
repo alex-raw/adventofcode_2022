@@ -31,7 +31,7 @@ function solve(filename::String)
     part1 = sum(filter(<=(100_000), sizes))
 
     required = maximum(sizes) - 40_000_000
-    part2 = minimum(.sizes[sizes .> required])
+    part2 = minimum(sizes[sizes .> required])
     println("part1 = $part1, part2 = $part2")
 end
 
