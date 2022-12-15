@@ -26,7 +26,7 @@ function getgrid(inds::Vector{CartesianIndices}; floor = false)::Matrix{Bool}
     for segment in inds
         m[segment] .= true
     end
-    floor && (m[:,end] .= true)
+    floor && (m[:, end] .= true)
     return m'
 end
 

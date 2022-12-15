@@ -1,5 +1,7 @@
 Base.isless(a::Int, b::Vector) = [a] < b
 Base.isless(a::Vector, b::Int) = a < [b]
+Base.isequal(a::Int, b::Vector) = [a] == b
+Base.isequal(a::Vector, b::Int) = a == [b]
 
 function solve(filename)
     input = readchomp(filename)
