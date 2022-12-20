@@ -53,5 +53,6 @@ function solve(file::String)
     sum(assessquality, costs)
 end
 
-
-@show solve("data/19.txt")  # wrong, gg wp
+@show solve("data/19.txt")
+# wrong, gg wp; started correctly with DFS, but didn't prune correctly so it was too slow
+# switched to this after

@@ -1,5 +1,3 @@
-# .|> rock -> map(x -> x[1] + x[2]im, rock)
-
 function getrocks()
     rocks = BitArray[
         [1 1 1 1],
@@ -40,4 +38,4 @@ function solve(file::String; n = 2022)::Int
 end
 
 @show solve("data/17.txt")
-# @show solve("data/17.txt"; n = 1_000_000_000_000) # too slow
+# part2: gg wp, didn't realize there is a repeating pattern
